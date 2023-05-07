@@ -362,9 +362,7 @@ const Services = ({ values, onChange }) => {
 
 const SubmitPage = ({ values }) => {
     const handleSubmit = () => {
-        // event.preventDefault(); // prevent form submission
-
-        alert(JSON.stringify(values)); // show the form data in an alert dialog
+        alert(JSON.stringify(values));
         window.location.reload()
     };
     return(

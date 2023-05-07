@@ -827,13 +827,3 @@ svg {
     color: #4A3AFF;
     height: 58px;
 }
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
