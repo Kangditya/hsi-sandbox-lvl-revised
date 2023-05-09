@@ -1,6 +1,16 @@
+const initialData = {
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    service: 'Development',
+    budget: '50000 +',
+}
+
 // HOOKS
 const useForm = (callback, validate) => {
-    const [values, setValues] = React.useState({});
+    
+    const [values, setValues] = React.useState(initialData);
     const [errors, setErrors] = React.useState({});
     const [touched, setTouched] = React.useState({});
 
@@ -261,7 +271,7 @@ const Budget = ({ values, onChange }) => {
                     </div>
                 </label>
                 <label htmlFor="budget4" className='budget'>
-                    <input id="budget4" name="budget" type="radio" value="50000 +" defaultChecked={values.budget === "50000 +"} onChange={onChange}/>
+                    <input id="budget4" name="budget" type="radio" value="50000 +" checked={values.budget === "50000 +"} onChange={onChange}/>
                     <div htmlFor="budget" id="service-box" className="form-budget">
                         <div class="checkmark">
                         </div>
@@ -361,7 +371,8 @@ const Services = ({ values, onChange }) => {
 }
 
 const SubmitPage = ({ values }) => {
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault(); 
         alert(JSON.stringify(values));
         window.location.reload()
     };
@@ -390,15 +401,6 @@ const SubmitPage = ({ values }) => {
 };
 
 const Form = () => {
-    const data = {
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: 'Development',
-        budget: '50000 +',
-    }
-
     const [selectedTab, setSelectedTab] = React.useState(0)
     const numbers = [1,2,3,4];
 
@@ -410,7 +412,7 @@ const Form = () => {
         setSelectedTab(selectedTab - 1);
     };
 
-    const dispatch = React.useReducer(formReducer, data)
+    const dispatch = React.useReducer(formReducer, initialData)
 
     const submitFormCallback = () => {
         if (selectedTab === 3) {
@@ -436,7 +438,6 @@ const Form = () => {
 
     const { values, errors, onBlur, onChange, onSubmit } = useForm(submitFormCallback, validateForm(selectedTab));
     const { name, email, phone, company, service, budget } = values;
-    console.log(errors);
     return(
         <div className="container">
             <form onSubmit={onSubmit} autoComplete='off'>
