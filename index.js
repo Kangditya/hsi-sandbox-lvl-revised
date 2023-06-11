@@ -412,7 +412,7 @@ const Form = () => {
         setSelectedTab(selectedTab - 1);
     };
 
-    const dispatch = React.useReducer(formReducer, initialData)
+    const [state, dispatch] = React.useReducer(formReducer, initialData)
 
     const submitFormCallback = () => {
         if (selectedTab === 3) {
