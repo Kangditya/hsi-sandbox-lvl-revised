@@ -660,24 +660,27 @@ svg {
 }
 
 .form-input input {
-    background-color: #EFF0F6;
+    background-color: #FFFFFF;
     box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
-    border: 1px solid #EFF0F7;
+    border: 1px solid #EFF0F6;
     border-radius: 64px;
     padding: 20px;
     width: 246px;
     height: 24px;
-    font-size: 16px;
+    font-size: 18px;
+    color: #6F6C90;
 }
 
 .form-input-error input {
-    background-color: #EFF0F6;
+    background-color: #FFFFFF;
     box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
     border: 1px solid #962DFF;
     border-radius: 64px;
     padding: 20px;
     width: 246px;
     height: 24px;
+    font-size: 18px;
+    color: #6F6C90;
 }
 
 .form-input input:focus {
